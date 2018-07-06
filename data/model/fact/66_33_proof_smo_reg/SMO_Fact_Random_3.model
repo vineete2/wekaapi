@@ -1,0 +1,131 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -M -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Relation:     Fact-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    78255
+Attributes:   28
+              boa_pattern_norm_count
+              boa_pattern_count
+              qgrams
+              qgrams_boa_score
+              sw_boa_score
+              smith_waterman
+              levenshtein
+              levenshtein_boa_score
+              object_similarity
+              subject_similarity
+              comma_count
+              digit_count
+              average_token_length
+              uppercase_letters_count
+              character_count
+              end_of_sentence_dot
+              end_of_sentence_question_mark
+              end_of_sentence_exclamation_mark
+              page_title_subject
+              page_title_object
+              number_of_non_alpha_numeric_characters
+              token_distance
+              total_occurrence
+              wordnet_expansion
+              dependency_subject_object
+              language
+              property_name
+              class
+Test mode:split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: FALSE, TRUE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.7905 * (normalized) boa_pattern_norm_count
+ +      -0.3305 * (normalized) boa_pattern_count
+ +      -1.0998 * (normalized) qgrams
+ +      -0.908  * (normalized) qgrams_boa_score
+ +       0.9884 * (normalized) sw_boa_score
+ +       0.2794 * (normalized) smith_waterman
+ +       1.7263 * (normalized) levenshtein
+ +       0.9452 * (normalized) levenshtein_boa_score
+ +       0.1518 * (normalized) object_similarity
+ +      -0.3023 * (normalized) subject_similarity
+ +       1.4551 * (normalized) comma_count
+ +      -1.8801 * (normalized) digit_count
+ +       1.1066 * (normalized) average_token_length
+ +      -3.1251 * (normalized) uppercase_letters_count
+ +     -12.8267 * (normalized) character_count
+ +      -2.1129 * (normalized) end_of_sentence_dot
+ +       0.2163 * (normalized) page_title_subject
+ +      -0.0096 * (normalized) page_title_object
+ +       2.3873 * (normalized) number_of_non_alpha_numeric_characters
+ +      -2.6099 * (normalized) token_distance
+ +      -0.369  * (normalized) total_occurrence
+ +       0.7539 * (normalized) wordnet_expansion
+ +       2.6146 * (normalized) dependency_subject_object
+ +       0.1229 * (normalized) property_name=award
+ +       0.2634 * (normalized) property_name=birthPlace
+ +      -0.7976 * (normalized) property_name=deathPlace
+ +      -0.8606 * (normalized) property_name=foundationPlace
+ +       0.0161 * (normalized) property_name=leaderName
+ +      -0.0755 * (normalized) property_name=team
+ +       0.5273 * (normalized) property_name=author
+ +       0.2219 * (normalized) property_name=spouse
+ +       0.7861 * (normalized) property_name=starring
+ +      -0.204  * (normalized) property_name=subsidiary
+ +       1.0635
+
+Number of kernel evaluations: 1350027581 (32.364% cached)
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+              Class
+Variable      FALSE
+===================
+pred         -1.594
+Intercept     0.025
+
+
+Odds Ratios...
+              Class
+Variable      FALSE
+===================
+pred         0.2031
+
+
+
+
+Time taken to build model: 439.39 seconds
+
+=== Evaluation on test split ===
+=== Summary ===
+
+Correctly Classified Instances       24617               92.5208 %
+Incorrectly Classified Instances      1990                7.4792 %
+Kappa statistic                          0.83  
+Mean absolute error                      0.1135
+Root mean squared error                  0.2366
+Relative absolute error                 25.6448 %
+Root relative squared error             50.3085 %
+Total Number of Instances            26607     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.876     0.051      0.895     0.876     0.886      0.969    FALSE
+                 0.949     0.124      0.94      0.949     0.944      0.969    TRUE
+Weighted Avg.    0.925     0.1        0.925     0.925     0.925      0.969
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+  7696  1089 |     a = FALSE
+   901 16921 |     b = TRUE
+

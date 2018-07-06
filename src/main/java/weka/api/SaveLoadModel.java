@@ -40,10 +40,11 @@ public class SaveLoadModel {
 		Classifier smo2 = (Classifier) weka.core.SerializationHelper.read("C:/Users/vinee/git/FactCheck/data/machinelearning/model/fact/66_33_proof_smo_reg/SMO_Fact_Random_1.model");
 
 		//load new dataset
-		DataSource source1 = new DataSource("C:/Users/vinee/git/FactCheck/data/machinelearning/model/fact/66_33_proof_smo_reg/66_33_proof_smo_reg_polykernel.arff");
+		DataSource source1 = new DataSource("C:/Users/vinee/Desktop/defacto_fact2_award_Test.arff");
 		Instances testDataset = source1.getDataSet();	
 		//set class index to the last attribute
 		testDataset.setClassIndex(testDataset.numAttributes()-1);
+		testDataset.deleteStringAttributes();
 		
 		//get class double value for first instance
 		double actualValue = testDataset.instance(0).classValue();
